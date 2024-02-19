@@ -1,0 +1,100 @@
+@mixin textSettings($font-family, $font-weight, $font-url, $format) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    src: url($font-url) format($format);
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin underScale($color: #fff) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: $color;
+    bottom: 0;
+    border-radius: 2px;
+    transition: all 0.2s ease-out;
+  }
+  &:hover::before {
+    width: 100%;
+    transition: all 0.2s ease-out;
+  }
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+@mixin unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@mixin back-img($color, $url) {
+  background: $color url($url) no-repeat center / cover;
+}
+
+html {
+  font-family: "Nekst", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  font-size: calc(100vw / 1920 * 10);
+
+  //@include mini-desktop {
+  //  font-size: calc(100vw / 1024 * 10);
+  //}
+
+  //@include tablet {
+  //  font-size: calc(100vw / 1024 * 10);
+  //}
+
+  @include mini-tablet {
+    font-size: calc(100vw / 420 * 10);
+  }
+
+  //@include mobile {
+  //  font-size: calc(100vw / 420 * 10);
+  //}
+
+  //@include mini-mobile {
+  //  font-size: calc(100vw / 320 * 10);
+  //}
+}
+
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+

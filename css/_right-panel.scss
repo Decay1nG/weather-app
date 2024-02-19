@@ -1,0 +1,36 @@
+.hourly__weather {
+  position: absolute;
+  width: 10rem;
+  height: 70vh;
+  background-color: white;
+  border-radius: 20px;
+  right: -5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: -20px 9px 16px -8px rgb(15 15 15 / 16%);
+  @include hidden;
+  transition: right 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.hourly__weather--active {
+  right: 0;
+  @include visible;
+  transition: right 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+}
+
+.hourly__weather--list {
+  display: grid;
+  height: 100%;
+  grid-template: repeat(6, 1fr) / 1fr;
+}
+
+.hourly__weather--item {
+  text-align: center;
+  @include between;
+  flex-direction: column;
+  padding: 2rem 0;
+}

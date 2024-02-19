@@ -1,0 +1,91 @@
+.app {
+  @include between;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 7rem 3rem 13rem;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.settings__panel {
+  width: 100%;
+  @include between;
+}
+
+.settings__buttons {
+  width: 3.5rem;
+  @include between;
+}
+
+.choose {
+  margin-left: 5px;
+}
+
+
+.location__geo {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.location__descr {
+  font-size: 0.62rem;
+  font-weight: 300;
+}
+
+.content__box {
+  margin-top: 5rem;
+  height: 100%;
+  @include between;
+  flex-direction: column;
+}
+
+.insync {
+  font-size: 0.6rem;
+  color: #616161;
+}
+
+#date {
+  font-size: 2rem;
+}
+
+#avg__temp {
+  font-size: 6rem;
+}
+
+.temp__container {
+  width: 12.2rem;
+  @include between;
+}
+
+.min__temp, .max__temp, .sun__up, .sun__down {
+  display: flex;
+  font-size: 1.12rem;
+  color: #616161;
+  align-items: center;
+
+  p {
+      margin-left: 5px;
+  }
+}
+
+.descr__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #616161;
+  }
+}
+
+.sun__status {
+  width: 17rem;
+  @include between;
+}

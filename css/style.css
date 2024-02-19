@@ -1,0 +1,209 @@
+html {
+  font-family: "Nekst", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  font-size: 0.5208333333vw;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 2.380952381vw;
+  }
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "Nekst";
+  font-weight: 100;
+  src: url("../resources/fonts/Nekst-Thin.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nekst";
+  font-weight: 500;
+  src: url("../resources/fonts/Nekst-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nekst";
+  font-weight: 300;
+  src: url("../resources/fonts/Nekst-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nekst";
+  font-weight: 200;
+  src: url("../resources/fonts/Nekst-Light.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nekst";
+  font-weight: 400;
+  src: url("../resources/fonts/Nekst-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nekst";
+  font-weight: 600;
+  src: url("../resources/fonts/Nekst-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nekst";
+  font-weight: 700;
+  src: url("../resources/fonts/Nekst-Black.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+.app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 7rem 3rem 13rem;
+}
+.app svg {
+  width: 100%;
+}
+
+.settings__panel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings__buttons {
+  width: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choose {
+  margin-left: 5px;
+}
+
+.location__geo {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.location__descr {
+  font-size: 0.62rem;
+  font-weight: 300;
+}
+
+.content__box {
+  margin-top: 5rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.insync {
+  font-size: 0.6rem;
+  color: #616161;
+}
+
+#date {
+  font-size: 2rem;
+}
+
+#avg__temp {
+  font-size: 6rem;
+}
+
+.temp__container {
+  width: 12.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.min__temp, .max__temp, .sun__up, .sun__down {
+  display: flex;
+  font-size: 1.12rem;
+  color: #616161;
+  align-items: center;
+}
+.min__temp p, .max__temp p, .sun__up p, .sun__down p {
+  margin-left: 5px;
+}
+
+.descr__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.descr__container p {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: #616161;
+}
+
+.sun__status {
+  width: 17rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hourly__weather {
+  position: absolute;
+  width: 10rem;
+  height: 70vh;
+  background-color: white;
+  border-radius: 20px;
+  right: -5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: -20px 9px 16px -8px rgba(15, 15, 15, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: right 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+}
+.hourly__weather svg {
+  width: 100%;
+}
+
+.hourly__weather--active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  transition: right 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+}
+
+.hourly__weather--list {
+  display: grid;
+  height: 100%;
+  grid-template: repeat(6, 1fr)/1fr;
+}
+
+.hourly__weather--item {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+/*# sourceMappingURL=style.css.map */
