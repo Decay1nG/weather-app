@@ -1,4 +1,4 @@
-const weatherApi = 'http://api.weatherapi.com/v1/forecast.json?key=600869ee39c24203868113610241802&q=London&days=1&aqi=no&alerts=no';
+const weatherApi = 'https://api.weatherapi.com/v1/forecast.json?key=600869ee39c24203868113610241802&q=London&days=1&aqi=no&alerts=no';
 
 const app = document.querySelector('.app'),
     geo = app.querySelector('.location__geo'),
