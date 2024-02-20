@@ -6,7 +6,7 @@ html {
 }
 @media (max-width: 768px) {
   html {
-    font-size: 2.380952381vw;
+    font-size: 2.9333333333vw;
   }
 }
 
@@ -164,12 +164,13 @@ html {
   align-items: center;
 }
 
-.hourly__weather {
+.hourly__weather, .details {
   position: absolute;
   width: 10rem;
-  height: 70vh;
+  height: 85vh;
   background-color: white;
   border-radius: 20px;
+  border-radius: 20px 0 0 20px;
   right: -5rem;
   top: 50%;
   transform: translateY(-50%);
@@ -179,19 +180,28 @@ html {
   z-index: -1;
   transition: right 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
 }
-.hourly__weather svg {
+.hourly__weather svg, .details svg {
+  width: 100%;
+}
+
+.descr__icon {
+  width: 100%;
+}
+.descr__icon img {
   width: 100%;
 }
 
 .hourly__weather--active {
   right: 0;
+  z-index: 2;
   opacity: 1;
   visibility: visible;
   z-index: 2;
   transition: right 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
 }
 
-.hourly__weather--list {
+.hourly__weather--list, .details__list {
+  padding-top: 3rem;
   display: grid;
   height: 100%;
   grid-template: repeat(6, 1fr)/1fr;
@@ -203,7 +213,168 @@ html {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 1.2rem 0;
+}
+
+.hourly__weather--icon {
+  margin: 8px 0;
+}
+
+.details {
+  border-radius: 0 20px 20px 0;
+  height: 65vh;
+  right: auto;
+  left: -5rem;
+  box-shadow: -20px 9px 16px -8px rgba(15, 15, 15, 0.16);
+  transition: left 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+}
+
+.details__menu--active {
+  z-index: 2;
+  left: 0;
+  right: auto;
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 20px 9px 16px -8px rgba(15, 15, 15, 0.16);
+  transition: left 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+}
+
+.details__list {
+  padding-top: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.details__item {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.details__item svg {
+  width: 100%;
+}
+
+.details__item--title {
+  font-size: 0.75rem;
+  color: #616161;
+  margin-bottom: 5px;
+}
+
+.details__item--value {
+  font-size: 1.12rem;
+}
+
+.arrow {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.details__button {
+  top: 1.5rem;
+}
+
+.app__shadow {
+  transition: all 0.2s;
+}
+
+.app__shadow--on {
+  background-color: rgba(0, 0, 0, 0.1098039216);
+  filter: blur(3px);
+  transition: all 0.2s;
+}
+
+.search__container {
+  background-color: white;
+  width: 30rem;
+  height: 8rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  box-shadow: 0px 20px 16px -8px rgba(15, 15, 15, 0.16);
+  border-radius: 20px;
+  z-index: 2;
+  transition: top 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+}
+
+.search__arrow {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: absolute;
+  border-radius: 100px;
+  top: 10rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(180deg);
+}
+
+.search--active {
+  top: 6vh;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  transition: top 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search__input {
+  width: 26.4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  padding-left: 3.8rem;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #FFFFFF;
+  background: none;
+  font-family: inherit;
+  color: #9baacf;
+}
+.search__input::placeholder {
+  color: #c8d0e7;
+}
+
+.search__icon {
+  height: 2rem;
+  position: absolute;
+  font-size: 2rem;
+  padding: 0 1rem;
+  display: flex;
+  color: #c8d0e7;
+  transition: 0.3s ease;
+}
+
+.search__arrow--active {
+  transform: rotate(0deg);
+  transition: transform 0.2s 0.2s;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,10 @@
-.hourly__weather {
+.hourly__weather, .details {
   position: absolute;
   width: 10rem;
-  height: 70vh;
+  height: 85vh;
   background-color: white;
   border-radius: 20px;
+  border-radius: 20px 0 0 20px;
   right: -5rem;
   top: 50%;
   transform: translateY(-50%);
@@ -16,13 +17,23 @@
   }
 }
 
-.hourly__weather--active {
+.descr__icon {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.hourly__weather--active, {
   right: 0;
+  z-index: 2;
   @include visible;
   transition: right 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
 }
 
-.hourly__weather--list {
+.hourly__weather--list, .details__list {
+  padding-top: 3rem;
   display: grid;
   height: 100%;
   grid-template: repeat(6, 1fr) / 1fr;
@@ -32,5 +43,74 @@
   text-align: center;
   @include between;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 1.2rem 0;
+}
+
+.hourly__weather--icon {
+  margin: 8px 0;
+}
+
+.details {
+  border-radius: 0 20px 20px 0;
+  height: 65vh;
+  right: auto;
+  left: -5rem;
+  box-shadow: -20px 9px 16px -8px rgb(15 15 15 / 16%);
+  transition: left 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+}
+
+.details__menu--active {
+  z-index: 2;
+  left: 0;
+  right: auto;
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 20px 9px 16px -8px rgba(15, 15, 15, 0.16);
+  transition: left 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+}
+
+.details__list {
+  padding-top: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.details__item {
+  padding: 1.5rem 0;
+  text-align: center;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.details__item--title {
+  font-size: 0.75rem;
+  color: #616161;
+  margin-bottom: 5px;
+}
+
+.details__item--value {
+  font-size: 1.12rem;
+}
+
+.arrow {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.details__button {
+  top: 1.5rem;
+}
+
+.app__shadow {
+  transition: all 0.2s;
+}
+
+.app__shadow--on {
+  background-color: #0000001c;
+  filter: blur(3px);
+  transition: all 0.2s;
 }
