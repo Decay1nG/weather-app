@@ -169,7 +169,6 @@ html {
   width: 10rem;
   height: 85vh;
   background-color: white;
-  border-radius: 20px;
   border-radius: 20px 0 0 20px;
   right: -5rem;
   top: 50%;
@@ -185,7 +184,7 @@ html {
 }
 
 .descr__icon {
-  width: 100%;
+  width: 10rem;
 }
 .descr__icon img {
   width: 100%;
@@ -240,7 +239,7 @@ html {
 }
 
 .details__list {
-  padding-top: 2rem;
+  padding-top: 5rem;
   justify-items: center;
   align-items: center;
 }
@@ -271,7 +270,7 @@ html {
 }
 
 .details__button {
-  top: 1.5rem;
+  top: 2.5rem;
 }
 
 .app__shadow {

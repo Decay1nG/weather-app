@@ -3,17 +3,19 @@ let weatherApi = 'https://api.weatherapi.com/v1/forecast.json?key=600869ee39c242
 document.querySelector('.search__container').addEventListener('submit', (event) => {
     event.preventDefault();
     const searchInput = document.querySelector('.search__input');
-     // searchInput.value
-    document.querySelector('.location__geo').innerHTML = `${searchInput.value}`
+    geoStatus.innerHTML = `${searchInput.value}`
     weatherApi = `https://api.weatherapi.com/v1/forecast.json?key=600869ee39c24203868113610241802&q=${searchInput.value}&days=1&aqi=no&alerts=no`;
     getInfo();
     searchInput.value = '';
 });
 
-const app = document.querySelector('.app'), geo = app.querySelector('.location__geo'),
+const app = document.querySelector('.app'),
     hourItems = document.querySelectorAll('.hourly__weather--item'),
-    hourlyMenu = document.querySelector('.hourly__weather'), detailsMenu = document.querySelector('.details'),
-    searchMenu = document.querySelector('.search__container');
+    geoStatus = app.querySelector('.location__geo'),
+    hourlyMenu = document.querySelector('.hourly__weather'),
+    detailsMenu = document.querySelector('.details'),
+    searchMenu = document.querySelector('.search__container'),
+    shadowContainer = document.querySelector('.app__shadow');
 
 let weatherDB = {
     date: 0, avgTemp: 0, maxTemp: 0, minTemp: 0, sunrise: 0, sunset: 0, dayDescr: 0, icon: 0
@@ -131,20 +133,6 @@ function dataRender() {
             </div>
         </div>        
     `;
-
-
-    hourItems.forEach((item, i) => {
-        item.innerHTML = `
-            <p class="hourly__weather--time">${k}:00</p>
-                <div class="hourly__weather--icon">
-                    ${convertImg(weatherDB[1][i]["icon"])}            
-                </div>
-            <div class="hourly__weather--temperature">${weatherDB[1][i]["temp"]}°C</div>
-        `;
-
-        k += 3;
-    });
-
     detailsMenu.querySelector('.details__list').innerHTML = `
         <div data-arrow="details" class="arrow details__button">
                 <svg class="details__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
@@ -179,12 +167,24 @@ function dataRender() {
                 <p class="details__item--value">${weatherDB[0].is}</p>
             </li>
     `;
+
+    hourItems.forEach((item, i) => {
+        item.innerHTML = `
+            <p class="hourly__weather--time">${k}:00</p>
+                <div class="hourly__weather--icon">
+                    ${convertImg(weatherDB[1][i]["icon"])}            
+                </div>
+            <div class="hourly__weather--temperature">${weatherDB[1][i]["temp"]}°C</div>
+        `;
+
+        k += 3;
+    });
 }
 
 const getInfo = async () => {
-    let result = await fetch(weatherApi), convertedResult = await result.json();
-
-    let weatherInfo = convertedResult.forecast.forecastday[0];
+    let result = await fetch(weatherApi),
+        convertedResult = await result.json(),
+        weatherInfo = convertedResult.forecast.forecastday[0];
 
     weatherDB = [{
         date: weatherInfo["date"],
@@ -218,8 +218,6 @@ const getInfo = async () => {
         },]];
 
     dataRender();
-
-    console.log(weatherDB);
 }
 
 getInfo();
@@ -237,8 +235,9 @@ function showRightMenu() {
             return false;
         }
 
-        let x2 = event.touches[0].clientX, y2 = event.touches[0].clientY, horizontalDifference = x1 - x2,
-            reverseHorizontalDifference = x2 - x1, verticalDifference = Math.abs(y2 - y1);
+        let x2 = event.touches[0].clientX, y2 = event.touches[0].clientY,
+            horizontalDifference = x1 - x2,
+            verticalDifference = Math.abs(y2 - y1);
 
         if (Math.abs(horizontalDifference) > verticalDifference) {
             let index = 0;
@@ -265,12 +264,11 @@ function showRightMenu() {
 }
 
 window.addEventListener('click', (event) => {
-
     if (event.target.closest('[data-arrow]')) {
         switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
             case 'hourly':
                 hourlyMenu.classList.remove('hourly__weather--active');
-                document.querySelector('.app__shadow').classList.remove('app__shadow--on');
+                shadowContainer.classList.remove('app__shadow--on');
                 break
 
             case 'none':
@@ -278,25 +276,22 @@ window.addEventListener('click', (event) => {
 
             case 'details':
                 detailsMenu.classList.remove('details__menu--active');
-                document.querySelector('.app__shadow').classList.remove('app__shadow--on');
+                shadowContainer.classList.remove('app__shadow--on');
                 break
 
             case 'search':
                 searchMenu.classList.remove('search--active');
                 document.querySelector('.search__arrow').classList.remove('search__arrow--active');
-                document.querySelector('.app__shadow').classList.remove('app__shadow--on');
+                shadowContainer.classList.remove('app__shadow--on');
                 break
         }
     } else {
-        document.querySelector('.app__shadow').classList.remove('app__shadow--on');
+        shadowContainer.classList.remove('app__shadow--on');
         hourlyMenu.classList.remove('hourly__weather--active');
         detailsMenu.classList.remove('details__menu--active');
         searchMenu.classList.remove('search--active');
-        document.querySelector('.search__arrow').classList.remove('search__arrow--active');
+        shadowContainer.classList.remove('search__arrow--active');
     }
-    event.target.closest('[data-arrow]').getAttribute('data-arrow')
 });
-
-
 
 showRightMenu();
