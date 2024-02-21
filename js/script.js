@@ -27,9 +27,9 @@ function dataRender() {
 
     function convertImg(description) {
         if (description === 'Sunny' || description === 'Partly cloudy' || description === 'Overcast' || description === 'Mist') {
-            return '<img src="resources/img/icons/sun.svg" alt="">'
+            return '<img src="../resources/img/icons/sun.svg" alt="">'
         } else {
-            return '<img src="resources/img/icons/Drizzle.svg" alt="">'
+            return '<img src="../resources/img/icons/Drizzle.svg" alt="">'
         }
 
     }
