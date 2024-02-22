@@ -276,6 +276,7 @@ html {
 
 .app__shadow {
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .app__shadow--on {
