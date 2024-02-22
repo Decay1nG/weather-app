@@ -264,34 +264,43 @@ function showRightMenu() {
 }
 
 window.addEventListener('click', (event) => {
-    if (event.target.closest('[data-arrow]')) {
-        switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
-            case 'hourly':
-                hourlyMenu.classList.remove('hourly__weather--active');
-                shadowContainer.classList.remove('app__shadow--on');
-                break
+    // if (event.target.closest('[data-arrow]')) {
+    //     switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
+    //         case 'hourly':
+    //             hourlyMenu.classList.remove('hourly__weather--active');
+    //             shadowContainer.classList.remove('app__shadow--on');
+    //             break
+    //
+    //         case 'none':
+    //             break
+    //
+    //         case 'details':
+    //             detailsMenu.classList.remove('details__menu--active');
+    //             shadowContainer.classList.remove('app__shadow--on');
+    //             break
+    //
+    //         case 'search':
+    //             searchMenu.classList.remove('search--active');
+    //             document.querySelector('.search__arrow').classList.remove('search__arrow--active');
+    //             shadowContainer.classList.remove('app__shadow--on');
+    //             break
+    //     }
+    // } else {
+    //     shadowContainer.classList.remove('app__shadow--on');
+    //     hourlyMenu.classList.remove('hourly__weather--active');
+    //     detailsMenu.classList.remove('details__menu--active');
+    //     searchMenu.classList.remove('search--active');
+    //     shadowContainer.classList.remove('search__arrow--active');
+    // }
 
-            case 'none':
-                break
-
-            case 'details':
-                detailsMenu.classList.remove('details__menu--active');
-                shadowContainer.classList.remove('app__shadow--on');
-                break
-
-            case 'search':
-                searchMenu.classList.remove('search--active');
-                document.querySelector('.search__arrow').classList.remove('search__arrow--active');
-                shadowContainer.classList.remove('app__shadow--on');
-                break
-        }
-    } else {
-        shadowContainer.classList.remove('app__shadow--on');
+    if (event.target.closest('[data-arrow]').getAttribute('data-arrow') === "hourly") {
         hourlyMenu.classList.remove('hourly__weather--active');
-        detailsMenu.classList.remove('details__menu--active');
-        searchMenu.classList.remove('search--active');
-        shadowContainer.classList.remove('search__arrow--active');
+        shadowContainer.classList.remove('app__shadow--on');
     }
+
+    console.log(event.target.closest('[data-arrow]').getAttribute('data-arrow'))
+
+
 });
 
 showRightMenu();
