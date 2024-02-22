@@ -134,7 +134,7 @@ function dataRender() {
         </div>        
     `;
     detailsMenu.querySelector('.details__list').innerHTML = `
-        <div data-arrow="details" class="arrow details__button">
+        <div data-arrow="details" onclick="" class="arrow details__button">
                 <svg class="details__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
                      height="20">
                     <g class="details__arrow" id="_01_align_center" data-name="01 align center">
@@ -263,7 +263,7 @@ function showRightMenu() {
     });
 }
 
-window.addEventListener('touchstart', (event) => {
+window.addEventListener('click', (event) => {
     // if (event.target.closest('[data-arrow]')) {
     //     switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
     //         case 'hourly':
@@ -292,9 +292,9 @@ window.addEventListener('touchstart', (event) => {
     //     searchMenu.classList.remove('search--active');
     //     shadowContainer.classList.remove('search__arrow--active');
     // }
-    event.preventDefault();
-    if (event.target.closest('[data-arrow]').getAttribute('data-arrow') === "hourly") {
 
+    if (event.target.closest('[data-arrow]').getAttribute('data-arrow') === "hourly") {
+        event.preventDefault();
         hourlyMenu.classList.remove('hourly__weather--active');
         shadowContainer.classList.remove('app__shadow--on');
     }
