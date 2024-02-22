@@ -285,7 +285,8 @@ window.addEventListener('click', (event) => {
                 shadowContainer.classList.remove('app__shadow--on');
                 break
         }
-    } else {
+    } else if(event.target.closest('.app__shadow').classList.contains('app__shadow--on')) {
+        console.log(event.target.closest('.app__shadow').classList.contains('app__shadow--on'))
         shadowContainer.classList.remove('app__shadow--on');
         hourlyMenu.classList.remove('hourly__weather--active');
         detailsMenu.classList.remove('details__menu--active');
