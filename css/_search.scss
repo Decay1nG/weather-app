@@ -73,6 +73,6 @@
 .search__arrow--active {
   transform: rotate(0deg);
   transition: transform 0.2s .2s;
-  @include unselectable;
+  //@include unselectable;
 }
 

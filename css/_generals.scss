@@ -50,15 +50,15 @@
   z-index: 2;
 }
 
-@mixin unselectable {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Chrome/Safari/Opera */
-  -khtml-user-select: none; /* Konqueror */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+//@mixin unselectable {
+//  -webkit-touch-callout: none; /* iOS Safari */
+//  -webkit-user-select: none; /* Chrome/Safari/Opera */
+//  -khtml-user-select: none; /* Konqueror */
+//  -moz-user-select: none; /* Firefox */
+//  -ms-user-select: none; /* Internet Explorer/Edge */
+//  user-select: none;
+//  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//}
 
 @mixin back-img($color, $url) {
   background: $color url($url) no-repeat center / cover;

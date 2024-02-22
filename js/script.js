@@ -263,7 +263,7 @@ function showRightMenu() {
     });
 }
 
-window.addEventListener('click', (event) => {
+window.addEventListener('touchstart', (event) => {
     // if (event.target.closest('[data-arrow]')) {
     //     switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
     //         case 'hourly':
@@ -292,13 +292,14 @@ window.addEventListener('click', (event) => {
     //     searchMenu.classList.remove('search--active');
     //     shadowContainer.classList.remove('search__arrow--active');
     // }
+    event.preventDefault();
+    if (event.target.closest('[data-arrow]').getAttribute('data-arrow') === "hourly") {
 
-    if (event.target.closest('.hourly__weather')) {
         hourlyMenu.classList.remove('hourly__weather--active');
         shadowContainer.classList.remove('app__shadow--on');
     }
 
-    console.log(event.target.closest('.hourly__weather'))
+    
 
 
 });
