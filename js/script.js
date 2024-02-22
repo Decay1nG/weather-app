@@ -36,7 +36,7 @@ function dataRender() {
 
     document.querySelector('.content__box').innerHTML = `
         <p class="insync">in sync</p>
-        <div id="date">TEST</div>
+        <div id="date">TEST1</div>
         <div id="avg__temp">${weatherDB[0].avgTemp}°C</div>
         <div class="temp__container">
             <div class="min__temp">
@@ -293,12 +293,12 @@ window.addEventListener('click', (event) => {
     //     shadowContainer.classList.remove('search__arrow--active');
     // }
 
-    if (event.target.closest('[data-arrow]').getAttribute('data-arrow') === "hourly") {
+    if (event.target.closest('.hourly__weather')) {
         hourlyMenu.classList.remove('hourly__weather--active');
         shadowContainer.classList.remove('app__shadow--on');
     }
 
-    console.log(event.target.closest('[data-arrow]').getAttribute('data-arrow'))
+    console.log(event.target.closest('.hourly__weather'))
 
 
 });
