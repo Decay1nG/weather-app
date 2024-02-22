@@ -134,10 +134,10 @@ function dataRender() {
         </div>        
     `;
     detailsMenu.querySelector('.details__list').innerHTML = `
-        <div data-arrow="details" onclick="" class="arrow details__button">
-                <svg class="details__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
+        <div onclick="" data-arrow="details" onclick="" class="arrow details__button">
+                <svg onclick="" class="details__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
                      height="20">
-                    <g class="details__arrow" id="_01_align_center" data-name="01 align center">
+                    <g onclick="" class="details__arrow" id="_01_align_center" data-name="01 align center">
                         <polygon class="details__arrow" points="24 1.414 22.586 0 12 10.586 1.414 0 0 1.414 10.586 12 0 22.586 1.414 24 12 13.414 22.586 24 24 22.586 13.414 12 24 1.414"/>
                     </g>
                 </svg>
@@ -264,44 +264,34 @@ function showRightMenu() {
 }
 
 window.addEventListener('click', (event) => {
-    // if (event.target.closest('[data-arrow]')) {
-    //     switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
-    //         case 'hourly':
-    //             hourlyMenu.classList.remove('hourly__weather--active');
-    //             shadowContainer.classList.remove('app__shadow--on');
-    //             break
-    //
-    //         case 'none':
-    //             break
-    //
-    //         case 'details':
-    //             detailsMenu.classList.remove('details__menu--active');
-    //             shadowContainer.classList.remove('app__shadow--on');
-    //             break
-    //
-    //         case 'search':
-    //             searchMenu.classList.remove('search--active');
-    //             document.querySelector('.search__arrow').classList.remove('search__arrow--active');
-    //             shadowContainer.classList.remove('app__shadow--on');
-    //             break
-    //     }
-    // } else {
-    //     shadowContainer.classList.remove('app__shadow--on');
-    //     hourlyMenu.classList.remove('hourly__weather--active');
-    //     detailsMenu.classList.remove('details__menu--active');
-    //     searchMenu.classList.remove('search--active');
-    //     shadowContainer.classList.remove('search__arrow--active');
-    // }
+    if (event.target.closest('[data-arrow]')) {
+        switch (event.target.closest('[data-arrow]').getAttribute('data-arrow')) {
+            case 'hourly':
+                hourlyMenu.classList.remove('hourly__weather--active');
+                shadowContainer.classList.remove('app__shadow--on');
+                break
 
-    if (event.target.closest('[data-arrow]').getAttribute('data-arrow') === "hourly") {
-        event.preventDefault();
-        hourlyMenu.classList.remove('hourly__weather--active');
+            case 'none':
+                break
+
+            case 'details':
+                detailsMenu.classList.remove('details__menu--active');
+                shadowContainer.classList.remove('app__shadow--on');
+                break
+
+            case 'search':
+                searchMenu.classList.remove('search--active');
+                document.querySelector('.search__arrow').classList.remove('search__arrow--active');
+                shadowContainer.classList.remove('app__shadow--on');
+                break
+        }
+    } else {
         shadowContainer.classList.remove('app__shadow--on');
+        hourlyMenu.classList.remove('hourly__weather--active');
+        detailsMenu.classList.remove('details__menu--active');
+        searchMenu.classList.remove('search--active');
+        shadowContainer.classList.remove('search__arrow--active');
     }
-
-    
-
-
 });
 
 showRightMenu();
