@@ -36,7 +36,7 @@ function dataRender() {
 
     document.querySelector('.content__box').innerHTML = `
         <p class="insync">in sync</p>
-        <div id="date">${weatherDB[0].date}</div>
+        <div id="date">TEST</div>
         <div id="avg__temp">${weatherDB[0].avgTemp}°C</div>
         <div class="temp__container">
             <div class="min__temp">
