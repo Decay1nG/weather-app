@@ -4,6 +4,7 @@
    "display": "standalone",
    "orientation": "portrait",
    "start_url": ".",
+   "description": "my test pwa app",
    "icons": [
        {
           "src": "resources/img/app-icon/512.png",
@@ -25,6 +26,13 @@
           "type": "image/png",
           "sizes": "768x768"
        }
-   ]
+   ],
+  "screenshots": [
+    {
+      "src": "resources/img/app-icon/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 
 }
