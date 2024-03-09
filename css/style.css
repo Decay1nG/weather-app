@@ -279,12 +279,6 @@ html {
   cursor: pointer;
 }
 
-.app__shadow--on {
-  background-color: rgba(0, 0, 0, 0.1098039216);
-  filter: blur(3px);
-  transition: all 0.2s;
-}
-
 .search__container {
   background-color: white;
   width: 30rem;
