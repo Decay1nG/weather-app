@@ -11,7 +11,7 @@
   box-shadow: 0px 20px 16px -8px rgba(15, 15, 15, 0.16);
   border-radius: 20px;
   z-index: 2;
-  transition: top 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+  transition: top 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
 }
 
 .search__arrow {
@@ -28,7 +28,7 @@
 .search--active {
   top: 6vh;
   @include visible;
-  transition: top 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+  transition: top 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
 .button__wrapper {

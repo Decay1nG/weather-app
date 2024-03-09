@@ -177,7 +177,7 @@ html {
   opacity: 0;
   visibility: hidden;
   z-index: -1;
-  transition: right 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+  transition: right 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
 }
 .hourly__weather svg, .details svg {
   width: 100%;
@@ -196,7 +196,7 @@ html {
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  transition: right 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+  transition: right 0.3s, opacity 0.3s, z-index 0.3s, visibility 0.3s;
 }
 
 .hourly__weather--list, .details__list {
@@ -225,7 +225,7 @@ html {
   right: auto;
   left: -5rem;
   box-shadow: -20px 9px 16px -8px rgba(15, 15, 15, 0.16);
-  transition: left 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+  transition: left 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
 }
 
 .details__menu--active {
@@ -235,7 +235,7 @@ html {
   visibility: visible;
   opacity: 1;
   box-shadow: 20px 9px 16px -8px rgba(15, 15, 15, 0.16);
-  transition: left 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+  transition: left 0.3s, opacity 0.3s, z-index 0.3s, visibility 0.3s;
 }
 
 .details__list {
@@ -302,7 +302,7 @@ html {
   box-shadow: 0px 20px 16px -8px rgba(15, 15, 15, 0.16);
   border-radius: 20px;
   z-index: 2;
-  transition: top 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+  transition: top 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
 }
 
 .search__arrow {
@@ -323,7 +323,7 @@ html {
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  transition: top 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+  transition: top 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
 .button__wrapper {

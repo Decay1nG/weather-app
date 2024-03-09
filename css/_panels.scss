@@ -9,7 +9,7 @@
   transform: translateY(-50%);
   box-shadow: -20px 9px 16px -8px rgb(15 15 15 / 16%);
   @include hidden;
-  transition: right 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+  transition: right 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
 
   svg {
     width: 100%;
@@ -28,7 +28,7 @@
   right: 0;
   z-index: 2;
   @include visible;
-  transition: right 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+  transition: right 0.30s, opacity 0.3s, z-index 0.3s, visibility 0.3s;
 }
 
 .hourly__weather--list, .details__list {
@@ -55,7 +55,7 @@
   right: auto;
   left: -5rem;
   box-shadow: -20px 9px 16px -8px rgb(15 15 15 / 16%);
-  transition: left 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
+  transition: left 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
 }
 
 .details__menu--active {
@@ -65,7 +65,7 @@
   visibility: visible;
   opacity: 1;
   box-shadow: 20px 9px 16px -8px rgba(15, 15, 15, 0.16);
-  transition: left 0.25s ease-out, opacity 0.25s ease-out, z-index 0.25s ease-out, visibility 0.25s ease-out;
+  transition: left 0.3s, opacity 0.3s, z-index 0.3s, visibility 0.3s;
 }
 
 .details__list {
