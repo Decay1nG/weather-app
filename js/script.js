@@ -269,6 +269,7 @@ window.addEventListener('click', (event) => {
             case 'hourly':
                 hourlyMenu.classList.remove('hourly__weather--active');
                 shadowContainer.classList.remove('app__shadow--on');
+                shadowContainer.classList.remove('search__arrow--active');
                 break
 
             case 'none':
@@ -277,6 +278,7 @@ window.addEventListener('click', (event) => {
             case 'details':
                 detailsMenu.classList.remove('details__menu--active');
                 shadowContainer.classList.remove('app__shadow--on');
+                shadowContainer.classList.remove('search__arrow--active');
                 break
 
             case 'search':

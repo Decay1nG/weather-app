@@ -172,12 +172,12 @@ html {
   border-radius: 20px 0 0 20px;
   right: -5rem;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(5rem, -50%);
   box-shadow: -20px 9px 16px -8px rgba(15, 15, 15, 0.16);
   opacity: 0;
   visibility: hidden;
   z-index: -1;
-  transition: right 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
 }
 .hourly__weather svg, .details svg {
   width: 100%;
@@ -192,11 +192,12 @@ html {
 
 .hourly__weather--active {
   right: 0;
+  transform: translate(0, -50%);
   z-index: 2;
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  transition: right 0.3s, opacity 0.3s, z-index 0.3s, visibility 0.3s;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
 }
 
 .hourly__weather--list, .details__list {
@@ -223,9 +224,10 @@ html {
   border-radius: 0 20px 20px 0;
   height: 65vh;
   right: auto;
-  left: -5rem;
+  left: 0;
+  transform: translate(-10rem, -50%);
   box-shadow: -20px 9px 16px -8px rgba(15, 15, 15, 0.16);
-  transition: left 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
 }
 
 .details__menu--active {
@@ -233,9 +235,10 @@ html {
   left: 0;
   right: auto;
   visibility: visible;
+  transform: translate(0, -50%);
   opacity: 1;
   box-shadow: 20px 9px 16px -8px rgba(15, 15, 15, 0.16);
-  transition: left 0.3s, opacity 0.3s, z-index 0.3s, visibility 0.3s;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out, z-index 0.15s ease-out, visibility 0.15s ease-out;
 }
 
 .details__list {
@@ -279,6 +282,12 @@ html {
   cursor: pointer;
 }
 
+.app__shadow--on {
+  background-color: rgba(0, 0, 0, 0.1098039216);
+  filter: blur(3px);
+  transition: all 0.2s;
+}
+
 .search__container {
   background-color: white;
   width: 30rem;
@@ -286,7 +295,7 @@ html {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -13rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -296,7 +305,7 @@ html {
   box-shadow: 0px 20px 16px -8px rgba(15, 15, 15, 0.16);
   border-radius: 20px;
   z-index: 2;
-  transition: top 0.25s, opacity 0.25s, z-index 0.25s, visibility 0.25s;
+  transition: tranform 0.25s, opacity 0.25s, z-index 0.15s, visibility 0.15s;
 }
 
 .search__arrow {
@@ -310,14 +319,15 @@ html {
   justify-content: center;
   align-items: center;
   transform: rotate(180deg);
+  transition: transform 0.2s 0.2s;
 }
 
 .search--active {
-  top: 6vh;
+  transform: translate(-50%, 3rem);
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  transition: top 0.3s, opacity 0.3s, visibility 0.3s;
+  transition: transform 0.3s, opacity 0.3s, visibility 0.13s;
 }
 
 .button__wrapper {
