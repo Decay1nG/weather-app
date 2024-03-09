@@ -6,7 +6,7 @@ html {
 }
 @media (max-width: 768px) {
   html {
-    font-size: 2.9333333333vw;
+    font-size: 3.125vw;
   }
 }
 
@@ -319,7 +319,7 @@ html {
   justify-content: center;
   align-items: center;
   transform: rotate(180deg);
-  transition: transform 0.2s 0.2s;
+  transition: transform 0.8s 0.2s;
 }
 
 .search--active {
@@ -372,7 +372,7 @@ html {
 
 .search__arrow--active {
   transform: rotate(0deg);
-  transition: transform 0.2s 0.2s;
+  transition: trasform 1s 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */

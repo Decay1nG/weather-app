@@ -23,7 +23,7 @@
     background-color: white;
     @include center;
     transform: rotate(180deg);
-    transition: transform 0.2s .2s;
+    transition: transform 0.8s .2s;
   }
 
 .search--active {
@@ -73,7 +73,7 @@
 
 .search__arrow--active {
   transform: rotate(0deg);
-  transition: transform 0.2s .2s;
+  transition: trasform 1s .2s;
   //@include unselectable;
 }
 

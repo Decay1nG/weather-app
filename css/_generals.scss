@@ -79,7 +79,7 @@ html {
   //}
 
   @include mini-tablet {
-    font-size: calc(100vw / 375 * 11);
+    font-size: calc(100vw / 320 * 10);
   }
 
   //@include mobile {
