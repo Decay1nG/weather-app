@@ -27,9 +27,45 @@ function dataRender() {
 
     function convertImg(description) {
         if (description === 'Sunny' || description === 'Partly cloudy' || description === 'Overcast' || description === 'Mist') {
-            return '<img src="../resources/img/icons/sun.svg" alt="">'
+            return `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_19_168)">
+<path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 1V3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 21V23" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.21997 4.21997L5.63997 5.63997" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.36 18.36L19.78 19.78" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 12H3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 12H23" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.21997 19.78L5.63997 18.36" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.36 5.63997L19.78 4.21997" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_19_168">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+            `
         } else {
-            return '<img src="../resources/img/icons/Drizzle.svg" alt="">'
+            return `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_19_136)">
+<path d="M8 19V21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 13V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.0001 19V21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.0001 13V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 21V23" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 15V17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 16.58C21.0513 16.1195 21.9121 15.3115 22.4381 14.2915C22.9641 13.2715 23.1232 12.1016 22.8886 10.9781C22.6541 9.85472 22.0402 8.84617 21.1501 8.12179C20.2599 7.39742 19.1477 7.00131 18 6.99996H16.74C16.4231 5.77248 15.8189 4.63791 14.9773 3.68976C14.1358 2.74161 13.081 2.00703 11.8998 1.54658C10.7186 1.08612 9.44494 0.912974 8.18372 1.0414C6.92249 1.16983 5.70984 1.59615 4.64573 2.28524C3.58161 2.97433 2.6965 3.90644 2.06334 5.00475C1.43018 6.10307 1.06711 7.33613 1.00404 8.60231C0.940984 9.86848 1.17974 11.1315 1.70064 12.2873C2.22153 13.4431 3.00965 14.4585 4.00003 15.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_19_136">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+            `
         }
 
     }
